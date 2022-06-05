@@ -19,6 +19,10 @@
 
 ---
 
+# Specification
+
+---
+
 # What are ordinals good for?
 
 - Ordinals are simple and aesthetic. Where aesthetics trump other
