@@ -58,3 +58,12 @@
 - instructions for installing ord or for submitting the NFTs to me to sign
 - Have everyone submit a PR to the ordinals NFT github repo with their NFTs
 - Create a gallery with all the NFTs
+
+# Rendering something pretty with degenerate
+
+```
+computer.resolution(4096);
+computer.x();
+computer.render();
+computer.save();
+```
