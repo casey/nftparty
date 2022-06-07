@@ -1,5 +1,18 @@
 # NFT Party
 
+## To Do
+- How to attach nft to paper wallet?
+- Ordinal prior art: follow the sat and bitcoin talk
+- Good for block space demand
+- Nfts gain value from social legitimacy
+- Nft database size, ordinal quirks, supply
+- explain bounties
+- Warning about how wildly irresponsible using private keys like this is
+
+- Test on other browsers
+- Make example code accessible
+- Add audio reactivity to degenerate
+
 ---
 
 # Introduction
@@ -39,6 +52,11 @@
 - Being efficient with block space
 - Extremely high divisibility (one ordinal is always one sat, after all)
 - Lots of state to verify by signing devices
+- I think that they don't play nice with things like simplicity smart
+  contracts. A simplicity smart contract won't be able to figure out which
+  ordinals are which in a transaction, so it can't constrain their movement, or
+  recognize them when they come back. But then again I'm not sure TARO does
+  either.
 
 ---
 
