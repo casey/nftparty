@@ -168,6 +168,8 @@ the UTXO that contains the ordinal is the current owner of the token.
 
 # DISCLAIMER
 
+[thicccc transaction](https://mempool.space/tx/c3a7786e164bbc7620a90601a1f284cff1a5e93c59978f566a9c7104bc33975a)
+
 ---
 
 # NFT Minting Party!
