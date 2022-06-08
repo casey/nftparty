@@ -172,7 +172,7 @@ the UTXO that contains the ordinal is the current owner of the token.
 
 # NFT Minting Party!
 1. Get a paper wallet with a PRIVATE_KEY
-2. Pick a FILE to nft-ize
+2. Pick a FILE to nft-ize (A meme? Some art? A poem?)
 3. Pick an appealing ORDINAL on your paper wallet
 4. Mint an nft and verify it:
     ```
