@@ -1,87 +1,195 @@
-# NFT Party
-
-## To Do
-- How to attach nft to paper wallet?
-- Ordinal prior art: follow the sat and bitcoin talk
-- Good for block space demand
-- Nfts gain value from social legitimacy
-- Nft database size, ordinal quirks, supply
-- explain bounties
-- Warning about how wildly irresponsible using private keys like this is
-
-- Test on other browsers
-- Make example code accessible
-- Add audio reactivity to degenerate
+# Ordinal NFT Party
 
 ---
 
-# Introduction
+# Today's Agenda
+- Who am I?
+- What are ordinals?
+- What does that have to do with NFTs?
+- Paper wallet ordinal NFT minting party w/free sats and wildly irresponsible
+  private key management!
 
-- Who I am
-- What we're going to do
-- Interrupt at any time to ask questions! If you have a question, other
-  people probably have the same question.
+---
+
+# Feel free to interrupt and ask questions!
+
+---
+
+# Who am I?
+- I'm just this guy, you know?
+- Bitcoin, Rust, and generative art programmer
+- Last big project was Agora, a server for selling downloads for Lightning
+  Network payments
+
+---
+
+# Why ordinals?
+- Wanted a simple protocol for assets on Bitcoin
+- Don't require any modification to the protocol
+- Aesthetically appealing, so particularly well-suited for art
 
 ---
 
 # What are ordinals?
-- Kind of an art project
-- How are they numbered?
-- How are they transferred?
-- Attributes
+
+---
+
+# Ordinals are just serial numbers for satoshis
+
+---
+
+# They start at 0, and go up to 1,906,077,499,999,999 (so far!)
+
+---
+
+# Are transferred with a simple first-in-first-out algorithm
+
+```
+[2] [1] [3] → [4] [2]
+```
+
+```
+[a b] [c] [d e f] → [? ? ? ?] [? ?]
+```
+
+```
+[a b] [c] [d e f] → [a b c d] [e f]
+```
+
+---
+
+# What about fees?
+
+```
+[2] [1] [3] → [4]
+```
+
+```
+[a b] [c] [d e f] → [a b c d]
+```
+
+```
+[SUBSIDY] [e f] → [SUBSIDY e f]
+```
 
 ---
 
 # Specification
 
+```python
+# subsidy of block at given height
+def subsidy(height):
+  return 50 * 100_000_000 >> height // 210_000
+
+# first ordinal of subsidy of block at given height
+def first_ordinal(height):
+  start = 0
+  for height in range(height):
+    start += subsidy(height)
+  return start
+
+# assign ordinals in given block
+def assign_ordinals(block):
+  first = first_ordinal(block.height)
+  last = first + subsidy(block.height)
+  coinbase_ordinals = list(range(first, last))
+
+  for transaction in block.transactions[1:]:
+    ordinals = []
+    for input in transaction.inputs:
+      ordinals.extend(input.ordinals)
+
+    for output in transaction.outputs:
+      output.ordinals = ordinals[:output.value]
+      del ordinals[:output.value]
+
+    coinbase_ordinals.extend(ordinals)
+
+  for output in block.transaction[0].outputs:
+    output.ordinals = coinbase_ordinals[:output.value]
+    del coinbase_ordinals[:output.value]
+```
+
 ---
 
 # What are ordinals good for?
 
-- Ordinals are simple and aesthetic. Where aesthetics trump other
-  considerations, ordinals may be the way to go. For NFTs, I don't think they
-  can be beat.
-- All state is on-chain. Can verify everything from on-chain state.
+If you want a token, you can just pick and ordinal to represent your token, and
+use the location of the ordinal to represent ownership.
+
+The person who controls the private key that corresponds to the public key of
+the UTXO that contains the ordinal is the current owner of the token.
+
+---
+
+# What else are ordinals good for?
+
+- Aesthetics!
+- Supporting the fee market!
+
+---
+
+# Wacky aside: Ordinal traits
+
+- 😏 Rare ordinals
+- 🤤 Epic ordinals
+- 🥵 Legendary ordinals
+- Bounties: https://ordinals.com/bounties/
 
 ---
 
 # What are ordinals not good for?
 
-- Serious adult things
-- Not making weird transactions to avoid the dust limit
+- Not having to make weird multi-step transactions to avoid hitting the dust
+  limit
 - Being efficient with block space
-- Extremely high divisibility (one ordinal is always one sat, after all)
-- Lots of state to verify by signing devices
-- I think that they don't play nice with things like simplicity smart
-  contracts. A simplicity smart contract won't be able to figure out which
-  ordinals are which in a transaction, so it can't constrain their movement, or
-  recognize them when they come back. But then again I'm not sure TARO does
-  either.
+- Very high divisibility
+- Small databases
 
 ---
 
-# NFTs on ordinals
+# Ordinal NFTs
 
-- Create the metadata
-- Sign metadata | ordinal with pubkey -> NFT
-- NFT can be shared. Anyone who has the NFT will know the secret, hidden
-  meaning of the ordinals.
+1. Hash: (ordinal || content hash || public key)
+2. Sign
+3. Append signature, data, and then bech32 encode
+4. Et voilà: `nft1qqz3psl8mvjm9t573n29l8q0phklcdhg65392pv0gpc79tydeujltn5g2h4fsg...`
 
 ---
 
-# NFT Party
+# Ordinal NFTs
 
-- Hand out paper wallets
-- Explain signing process
-- instructions for installing ord or for submitting the NFTs to me to sign
-- Have everyone submit a PR to the ordinals NFT github repo with their NFTs
-- Create a gallery with all the NFTs
+- No on-chain transaction to mint
+- Store the NFT wherever
+- Anyone who has access to the NFT will know the secret, hidden meaning of the
+  ordinal.
 
-# Rendering something pretty with degenerate
+---
+
+# DISCLAIMER
+
+---
+
+# NFT Minting Party!
+1. Get a paper wallet with a PRIVATE_KEY
+2. Pick a FILE to nft-ize
+3. Pick an appealing ORDINAL in your wallet's output
+4. Mint an nft:
 
 ```
-computer.resolution(4096);
-computer.x();
-computer.render();
-computer.save();
+ord mint \
+--data-path FILE \
+--ordinal ORDINAL \
+--signing-key PRIVATE_KEY \
+--output-path output.nft
 ```
+
+5. Send `output.nft` to casey@rodarmor.com or @rodarmor, if you want, so I can
+   make a gallery!
+
+# `ord` installation options
+
+1. Linux, MacOS, and Windows x86 binaries:
+   https://github.com/casey/ord/releases/tag/0.0.2
+2. `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && cargo install ord`
+3. Make me run it for you so you don't have to install weird code on your laptop
