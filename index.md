@@ -173,23 +173,39 @@ the UTXO that contains the ordinal is the current owner of the token.
 # NFT Minting Party!
 1. Get a paper wallet with a PRIVATE_KEY
 2. Pick a FILE to nft-ize
-3. Pick an appealing ORDINAL in your wallet's output
-4. Mint an nft:
+3. Pick an appealing ORDINAL on your paper wallet
+4. Mint an nft and verify it:
+    ```
+    ord mint \
+      --data-path FILE \
+      --ordinal ORDINAL \
+      --signing-key PRIVATE_KEY \
+      --output-path output.nft
 
-```
-ord mint \
---data-path FILE \
---ordinal ORDINAL \
---signing-key PRIVATE_KEY \
---output-path output.nft
-```
-
+    ord verify --input-path output.nft
+    ```
 5. Send `output.nft` to casey@rodarmor.com or @rodarmor, if you want, so I can
    make a gallery!
 
-# `ord` installation options
+## `ord` installation options:
 
 1. Linux, MacOS, and Windows x86 binaries:
-   https://github.com/casey/ord/releases/tag/0.0.2
+   `https://github.com/casey/ord/releases/tag/0.0.2`
 2. `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh && cargo install ord`
 3. Make me run it for you so you don't have to install weird code on your laptop
+
+## Extra Credit for the Deranged Overachiever: Mint a Degenerate NFT
+
+1. Go to: https://degenerate.computer
+2. Read the inscrutable manual: https://degenerate.computer/man/
+3. Write a program, render it, and save it. for example:
+    ```
+    computer.resolution(4096);
+    computer.scale(0.99);
+    computer.circle();
+    for (let i = 0; i < 100; i++) {
+      computer.render();
+    }
+    computer.save();
+    ```
+4. Mint an NFT with the PNG

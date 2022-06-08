@@ -41,7 +41,8 @@
 
       section {
         background-color: black;
-        padding: 2em;
+        padding-left: 2em;
+        padding-right: 2em;
         bottom: 0em;
         left: 0em;
         position: absolute;
@@ -177,25 +178,42 @@ ordinal.</li>
 <ol>
 <li>Get a paper wallet with a PRIVATE_KEY</li>
 <li>Pick a FILE to nft-ize</li>
-<li>Pick an appealing ORDINAL in your wallet’s output</li>
-<li>Mint an nft:</li>
-</ol>
+<li>Pick an appealing ORDINAL on your paper wallet</li>
+<li>Mint an nft and verify it:
 <pre><code>ord mint \
---data-path FILE \
---ordinal ORDINAL \
---signing-key PRIVATE_KEY \
---output-path output.nft
+  --data-path FILE \
+  --ordinal ORDINAL \
+  --signing-key PRIVATE_KEY \
+  --output-path output.nft
+
+ord verify --input-path output.nft
 </code></pre>
-<ol start="5">
+</li>
 <li>Send <code>output.nft</code> to casey@rodarmor.com or @rodarmor, if you want, so I can
 make a gallery!</li>
 </ol>
-<h1><code>ord</code> installation options</h1>
+<h2><code>ord</code> installation options:</h2>
 <ol>
 <li>Linux, MacOS, and Windows x86 binaries:
-https://github.com/casey/ord/releases/tag/0.0.2</li>
+<code>https://github.com/casey/ord/releases/tag/0.0.2</code></li>
 <li><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &amp;&amp; cargo install ord</code></li>
 <li>Make me run it for you so you don’t have to install weird code on your laptop</li>
+</ol>
+<h2>Extra Credit for the Deranged Overachiever: Mint a Degenerate NFT</h2>
+<ol>
+<li>Go to: https://degenerate.computer</li>
+<li>Read the inscrutable manual: https://degenerate.computer/man/</li>
+<li>Write a program, render it, and save it. for example:
+<pre><code>computer.resolution(4096);
+computer.scale(0.99);
+computer.circle();
+for (let i = 0; i &lt; 100; i++) {
+  computer.render();
+}
+computer.save();
+</code></pre>
+</li>
+<li>Mint an NFT with the PNG</li>
 </ol></section>
   </body>
 </html>
