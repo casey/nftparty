@@ -138,6 +138,14 @@ the UTXO that contains the ordinal is the current owner of the token.
 
 ---
 
+# Ordinal Index
+
+- [big](http://api.ordinals.com:8000/list/e11d223685e110c5df93d7ae57f63c535ac59d1d65c16de779f23a9166229c7e:0)
+- [small](http://api.ordinals.com:8000/list/81bb70199e0c2cf6a32ee0b8079085eb590c311f6e91bb51c14b85846593a76e:1)
+- [spent](http://api.ordinals.com:8000/list/b40375d8e4f50728c18ed292c2e40ed616797592a2f5587c9f72a23a55973f9e:0)
+
+---
+
 # What are ordinals not good for?
 
 - Not having to make weird multi-step transactions to avoid hitting the dust

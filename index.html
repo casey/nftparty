@@ -6,7 +6,7 @@
     <meta name="google" content="notranslate" />
     <title>Ordinal NFT Party</title>
     <script>
-      const SLIDES = 19;
+      const SLIDES = 20;
       let current = parseInt(window.location.hash.substring(1)) || 0;
       window.location.hash = current;
       document.addEventListener("keydown", function(event) {
@@ -152,7 +152,13 @@ the UTXO that contains the ordinal is the current owner of the token.</p></secti
 <li>🥵 Legendary ordinals</li>
 <li>Bounties: https://ordinals.com/bounties/</li>
 </ul></section>
-    <section id="14"><h1>What are ordinals not good for?</h1>
+    <section id="14"><h1>Ordinal Index</h1>
+<ul>
+<li><a href="http://api.ordinals.com:8000/list/e11d223685e110c5df93d7ae57f63c535ac59d1d65c16de779f23a9166229c7e:0">big</a></li>
+<li><a href="http://api.ordinals.com:8000/list/81bb70199e0c2cf6a32ee0b8079085eb590c311f6e91bb51c14b85846593a76e:1">small</a></li>
+<li><a href="http://api.ordinals.com:8000/list/b40375d8e4f50728c18ed292c2e40ed616797592a2f5587c9f72a23a55973f9e:0">spent</a></li>
+</ul></section>
+    <section id="15"><h1>What are ordinals not good for?</h1>
 <ul>
 <li>Not having to make weird multi-step transactions to avoid hitting the dust
 limit</li>
@@ -160,23 +166,23 @@ limit</li>
 <li>Very high divisibility</li>
 <li>Small databases</li>
 </ul></section>
-    <section id="15"><h1>Ordinal NFTs</h1>
+    <section id="16"><h1>Ordinal NFTs</h1>
 <ol>
 <li>Hash: (ordinal || content hash || public key)</li>
 <li>Sign</li>
 <li>Append signature, data, and then bech32 encode</li>
 <li>Et voilà: <code>nft1qqz3psl8mvjm9t573n29l8q0phklcdhg65392pv0gpc79tydeujltn5g2h4fsg...</code></li>
 </ol></section>
-    <section id="16"><h1>Ordinal NFTs</h1>
+    <section id="17"><h1>Ordinal NFTs</h1>
 <ul>
 <li>No on-chain transaction to mint</li>
 <li>Store the NFT wherever</li>
 <li>Anyone who has access to the NFT will know the secret, hidden meaning of the
 ordinal.</li>
 </ul></section>
-    <section id="17"><h1>DISCLAIMER</h1>
+    <section id="18"><h1>DISCLAIMER</h1>
 <p><a href="https://mempool.space/tx/c3a7786e164bbc7620a90601a1f284cff1a5e93c59978f566a9c7104bc33975a">thicccc transaction</a></p></section>
-    <section id="18"><h1>NFT Minting Party!</h1>
+    <section id="19"><h1>NFT Minting Party!</h1>
 <ol>
 <li>Get a paper wallet with a PRIVATE_KEY</li>
 <li>Pick a FILE to nft-ize (A meme? Some art? A poem?)</li>
