@@ -200,7 +200,7 @@ the UTXO that contains the ordinal is the current owner of the token.
 
 1. Go to: https://degenerate.computer
 2. Read the inscrutable manual: https://degenerate.computer/man/
-3. Write a program, render it, and save it. for example:
+3. Input a program and execute it with `Shift + Enter`. for example:
     ```
     computer.resolution(4096);
     computer.scale(0.99);
