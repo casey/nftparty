@@ -6,7 +6,7 @@
     <meta name="google" content="notranslate" />
     <title>Ordinal NFT Party</title>
     <script>
-      const SLIDES = 20;
+      const SLIDES = 26;
       let current = parseInt(window.location.hash.substring(1)) || 0;
       window.location.hash = current;
       document.addEventListener("keydown", function(event) {
@@ -63,7 +63,53 @@
   </head>
   <body>
     <section id="0"><h1>Ordinal NFT Party</h1></section>
-    <section id="1"><h1>Today’s Agenda</h1>
+    <section id="1"><h1><a href="nfts/buddha.nft">buddha.nft</a></h1>
+<ul>
+<li>Ordinal: 1425808478041399</li>
+<li>Issuer: pubkey133rdsdr9ty662pe7ncznfeea89mrj559k7zatmevuep6hv2qh4hqk2lt6e
+<img src="nfts/buddha.jpg" alt="" /></li>
+</ul></section>
+    <section id="2"><h1><a href="nfts/cypherperro.nft">cypherperro.nft</a></h1>
+<ul>
+<li>Ordinal: 1425808477891389</li>
+<li>Issuer: pubkey1yc20ykku7pnnxe6cvyzpvagtuhys8qmwwcz79acehvd3ek0rfunqesmk6f
+<img src="nfts/cypherperro.jpg" alt="" /></li>
+</ul></section>
+    <section id="3"><h1><a href="nfts/joerodgers.nft">joerodgers.nft</a></h1>
+<ul>
+<li>Ordinal: 1715740163942679</li>
+<li>Issuer: pubkey1k2pg35p7e7cela42znvrk5z4nl8s99sx0ezk5haznt9rzm4xeynqfeself
+<img src="nfts/joerodgers.jpg" alt="" /></li>
+</ul></section>
+    <section id="4"><h1><a href="nfts/purity.nft">purity.nft</a></h1>
+<ul>
+<li>Ordinal: 1425808478031389</li>
+<li>Issuer: pubkey1p65jx0hkcl005drxr74y5cpa9438s5e6murwca036v7mkdq0nzfsn68qfc</li>
+</ul>
+<pre><code>== What is the pure digital practice? ==
+
+The pure digital practice removes impurities and confusion in digital realms.
+
+The purpose of pure digital practice is to cleanse and nourish living souls.
+
+== Why is digital purity desirable? ==
+
+Anything that offers the ability to verify its purity is like God. The more
+easily verifiable its purity, the more God-like it is.
+</code></pre></section>
+    <section id="5"><h1><a href="nfts/ratio.nft">ratio.nft</a></h1>
+<ul>
+<li>Ordinal: 1425808478091389</li>
+<li>Issuer: pubkey1mqlg3p5naw7dk3w935wzcztqsp08xjckyw4lycf4wsz78j9ftyssqg60la
+<img src="nfts/ratio.png" alt="" /></li>
+</ul></section>
+    <section id="6"><h1><a href="nfts/shitcoin.nft">shitcoin.nft</a></h1>
+<ul>
+<li>Ordinal: 1425808477901389</li>
+<li>Issuer: pubkey14dg8f49kzzqshqsjcf2lauanwpnud5kxu92uu9xkqdywsh27sguseelqst
+<img src="nfts/shitcoin.jpg" alt="" /></li>
+</ul></section>
+    <section id="7"><h1>Today’s Agenda</h1>
 <ul>
 <li>Who am I?</li>
 <li>What are ordinals?</li>
@@ -71,38 +117,38 @@
 <li>Paper wallet ordinal NFT minting party w/free sats and wildly irresponsible
 private key management!</li>
 </ul></section>
-    <section id="2"><h1>Feel free to interrupt and ask questions!</h1></section>
-    <section id="3"><h1>Who am I?</h1>
+    <section id="8"><h1>Feel free to interrupt and ask questions!</h1></section>
+    <section id="9"><h1>Who am I?</h1>
 <ul>
 <li>I’m just this guy, you know?</li>
 <li>Bitcoin, Rust, and generative art programmer</li>
 <li>Last big project was Agora, a server for selling downloads for Lightning
 Network payments</li>
 </ul></section>
-    <section id="4"><h1>Why ordinals?</h1>
+    <section id="10"><h1>Why ordinals?</h1>
 <ul>
 <li>Wanted a simple protocol for assets on Bitcoin</li>
 <li>Don’t require any modification to the protocol</li>
 <li>Aesthetically appealing, so particularly well-suited for art</li>
 </ul></section>
-    <section id="5"><h1>What are ordinals?</h1></section>
-    <section id="6"><h1>Ordinals are just serial numbers for satoshis</h1></section>
-    <section id="7"><h1>They start at 0, and go up to 1,906,077,499,999,999 (so far!)</h1></section>
-    <section id="8"><h1>Are transferred with a simple first-in-first-out algorithm</h1>
+    <section id="11"><h1>What are ordinals?</h1></section>
+    <section id="12"><h1>Ordinals are just serial numbers for satoshis</h1></section>
+    <section id="13"><h1>They start at 0, and go up to 1,906,077,499,999,999 (so far!)</h1></section>
+    <section id="14"><h1>Are transferred with a simple first-in-first-out algorithm</h1>
 <pre><code>[2] [1] [3] → [4] [2]
 </code></pre>
 <pre><code>[a b] [c] [d e f] → [? ? ? ?] [? ?]
 </code></pre>
 <pre><code>[a b] [c] [d e f] → [a b c d] [e f]
 </code></pre></section>
-    <section id="9"><h1>What about fees?</h1>
+    <section id="15"><h1>What about fees?</h1>
 <pre><code>[2] [1] [3] → [4]
 </code></pre>
 <pre><code>[a b] [c] [d e f] → [a b c d]
 </code></pre>
 <pre><code>[SUBSIDY] [e f] → [SUBSIDY e f]
 </code></pre></section>
-    <section id="10"><h1>Specification</h1>
+    <section id="16"><h1>Specification</h1>
 <pre><code class="language-python"># subsidy of block at given height
 def subsidy(height):
   return 50 * 100_000_000 &gt;&gt; height // 210_000
@@ -135,30 +181,30 @@ def assign_ordinals(block):
     output.ordinals = coinbase_ordinals[:output.value]
     del coinbase_ordinals[:output.value]
 </code></pre></section>
-    <section id="11"><h1>What are ordinals good for?</h1>
+    <section id="17"><h1>What are ordinals good for?</h1>
 <p>If you want a token, you can just pick and ordinal to represent your token, and
 use the location of the ordinal to represent ownership.</p>
 <p>The person who controls the private key that corresponds to the public key of
 the UTXO that contains the ordinal is the current owner of the token.</p></section>
-    <section id="12"><h1>What else are ordinals good for?</h1>
+    <section id="18"><h1>What else are ordinals good for?</h1>
 <ul>
 <li>Aesthetics!</li>
 <li>Supporting the fee market!</li>
 </ul></section>
-    <section id="13"><h1>Wacky aside: Ordinal traits</h1>
+    <section id="19"><h1>Wacky aside: Ordinal traits</h1>
 <ul>
 <li>😏 Rare ordinals</li>
 <li>🤤 Epic ordinals</li>
 <li>🥵 Legendary ordinals</li>
 <li>Bounties: https://ordinals.com/bounties/</li>
 </ul></section>
-    <section id="14"><h1>Ordinal Index</h1>
+    <section id="20"><h1>Ordinal Index</h1>
 <ul>
 <li><a href="http://api.ordinals.com:8000/list/e11d223685e110c5df93d7ae57f63c535ac59d1d65c16de779f23a9166229c7e:0">big</a></li>
 <li><a href="http://api.ordinals.com:8000/list/81bb70199e0c2cf6a32ee0b8079085eb590c311f6e91bb51c14b85846593a76e:1">small</a></li>
 <li><a href="http://api.ordinals.com:8000/list/b40375d8e4f50728c18ed292c2e40ed616797592a2f5587c9f72a23a55973f9e:0">spent</a></li>
 </ul></section>
-    <section id="15"><h1>What are ordinals not good for?</h1>
+    <section id="21"><h1>What are ordinals not good for?</h1>
 <ul>
 <li>Not having to make weird multi-step transactions to avoid hitting the dust
 limit</li>
@@ -166,23 +212,23 @@ limit</li>
 <li>Very high divisibility</li>
 <li>Small databases</li>
 </ul></section>
-    <section id="16"><h1>Ordinal NFTs</h1>
+    <section id="22"><h1>Ordinal NFTs</h1>
 <ol>
 <li>Hash: (ordinal || content hash || public key)</li>
 <li>Sign</li>
 <li>Append signature, data, and then bech32 encode</li>
 <li>Et voilà: <code>nft1qqz3psl8mvjm9t573n29l8q0phklcdhg65392pv0gpc79tydeujltn5g2h4fsg...</code></li>
 </ol></section>
-    <section id="17"><h1>Ordinal NFTs</h1>
+    <section id="23"><h1>Ordinal NFTs</h1>
 <ul>
 <li>No on-chain transaction to mint</li>
 <li>Store the NFT wherever</li>
 <li>Anyone who has access to the NFT will know the secret, hidden meaning of the
 ordinal.</li>
 </ul></section>
-    <section id="18"><h1>DISCLAIMER</h1>
+    <section id="24"><h1>DISCLAIMER</h1>
 <p><a href="https://mempool.space/tx/c3a7786e164bbc7620a90601a1f284cff1a5e93c59978f566a9c7104bc33975a">thicccc transaction</a></p></section>
-    <section id="19"><h1>NFT Minting Party!</h1>
+    <section id="25"><h1>NFT Minting Party!</h1>
 <ol>
 <li>Get a paper wallet with a PRIVATE_KEY</li>
 <li>Pick a FILE to nft-ize (A meme? Some art? A poem?)</li>

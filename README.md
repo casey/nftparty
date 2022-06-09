@@ -2,6 +2,60 @@
 
 ---
 
+# [buddha.nft](nfts/buddha.nft)
+- Ordinal: 1425808478041399
+- Issuer: pubkey133rdsdr9ty662pe7ncznfeea89mrj559k7zatmevuep6hv2qh4hqk2lt6e
+![](nfts/buddha.jpg)
+
+---
+
+# [cypherperro.nft](nfts/cypherperro.nft)
+- Ordinal: 1425808477891389
+- Issuer: pubkey1yc20ykku7pnnxe6cvyzpvagtuhys8qmwwcz79acehvd3ek0rfunqesmk6f
+![](nfts/cypherperro.jpg)
+
+---
+
+# [joerodgers.nft](nfts/joerodgers.nft)
+- Ordinal: 1715740163942679
+- Issuer: pubkey1k2pg35p7e7cela42znvrk5z4nl8s99sx0ezk5haznt9rzm4xeynqfeself
+![](nfts/joerodgers.jpg)
+
+---
+
+# [purity.nft](nfts/purity.nft)
+- Ordinal: 1425808478031389
+- Issuer: pubkey1p65jx0hkcl005drxr74y5cpa9438s5e6murwca036v7mkdq0nzfsn68qfc
+
+```
+== What is the pure digital practice? ==
+
+The pure digital practice removes impurities and confusion in digital realms.
+
+The purpose of pure digital practice is to cleanse and nourish living souls.
+
+== Why is digital purity desirable? ==
+
+Anything that offers the ability to verify its purity is like God. The more
+easily verifiable its purity, the more God-like it is.
+```
+
+---
+
+# [ratio.nft](nfts/ratio.nft)
+- Ordinal: 1425808478091389
+- Issuer: pubkey1mqlg3p5naw7dk3w935wzcztqsp08xjckyw4lycf4wsz78j9ftyssqg60la
+![](nfts/ratio.png)
+
+---
+
+# [shitcoin.nft](nfts/shitcoin.nft)
+- Ordinal: 1425808477901389
+- Issuer: pubkey14dg8f49kzzqshqsjcf2lauanwpnud5kxu92uu9xkqdywsh27sguseelqst
+![](nfts/shitcoin.jpg)
+
+---
+
 # Today's Agenda
 - Who am I?
 - What are ordinals?
